@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>👀</title>
+<link rel='shortcut icon' type='image/svg+xml' href='gun.svg' />
+<style>
+      @import url('https://rsms.me/inter/inter.css');
+
+      html {
+        font-family: 'Inter', sans-serif;
+        background: black;
+      }
+
+      @supports (font-variation-settings: normal) {
+        html {
+          font-family: 'Inter var', sans-serif;
+        }
+      }
+
+      html,
+      body,
+      main {
+        height: 100%;
+        margin: 0;
+        color: white;
+      }
+      main {
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.8), black);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #bg {
+        display: none;
+      }
+
+      @media screen and (min-width: 1000px) {
+        main {
+          width: 50%;
+        }
+
+        #bg {
+          transform: scale(1.2);
+          position: fixed;
+          left: 10%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 20em;
+          font-family: monospace;
+          top: 0;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      a {
+        border-radius: 0.5em;
+        padding: 0.5em;
+        display: inline-block;
+        background: skyblue;
+        color: black;
+      }
+
+      
+
+      @media (prefers-color-scheme: light) {
+        main {
+        background: linear-gradient(to left, rgba(255, 255, 255, 0.8), white);
+        }
+        html {
+          background: white;
+        }
+        html,body,main {
+          color: black;
+        }
+
+        img {
+          filter: invert(100%);
+        }
+      }
+    </style>
+</head>
+<body>
+<main>
+<article>
+<img src="./logo.svg" alt="Name goes here." width="150">
+<p>Description</p>
+<a href="#">LINK 1</a>
+<a href="#">LINK 2</a>
+<a href="#">LINK 3</a>
+</article>
+</main>
+<span aria-hidden="true" id="bg">bg<br>text</span>
+</body>
+</html>
