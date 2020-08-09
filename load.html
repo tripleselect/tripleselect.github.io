@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>load</title>
+    <style>
+      body {
+        background: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
+
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+
+      rect:nth-child(1) {
+        animation: wave 1s ease-out infinite;
+        animation-delay: 0;
+      }
+
+      rect:nth-child(2) {
+        animation: wave 1s ease-out infinite;
+        animation-delay: 0.1s;
+      }
+
+      rect:nth-child(3) {
+        animation: wave 1s ease-out infinite;
+        animation-delay: 0.2s;
+      }
+
+      @keyframes wave {
+
+        from,
+        to {
+          transform: scale(1);
+        }
+
+        50% {
+
+          transform: scale(0.99);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <svg height="50%" version="1.1" viewBox="0 0 34.210514 41.694042"
+      xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
+      xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <linearGradient id="a">
+          <stop stop-color="#f0f" offset="0" />
+          <stop stop-color="#f0f" stop-opacity="0" offset="1" />
+        </linearGradient>
+        <linearGradient id="d" x1="100.36" x2="120.81" y1="74.498" y2="91.737"
+          gradientTransform="translate(-1.6036 7.6172)" gradientUnits="userSpaceOnUse" xlink:href="#a" />
+        <linearGradient id="c" x1="100.36" x2="120.81" y1="74.498" y2="91.737"
+          gradientTransform="translate(1.8709 15.234)" gradientUnits="userSpaceOnUse" xlink:href="#a" />
+        <linearGradient id="b" x1="100.36" x2="120.81" y1="74.498" y2="91.737"
+          gradientTransform="translate(7.2163 23.921)" gradientUnits="userSpaceOnUse" xlink:href="#a" />
+      </defs>
+      <metadata>
+        <rdf:RDF>
+          <cc:Work rdf:about="">
+            <dc:format>image/svg+xml</dc:format>
+            <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+            <dc:title />
+          </cc:Work>
+        </rdf:RDF>
+      </metadata>
+      <g transform="translate(-93.812 -73.964)">
+        <rect x="93.812" y="73.964" width="25.391" height="25.391" fill="url(#d)"
+          style="paint-order:stroke markers fill" />
+        <rect x="97.286" y="81.581" width="25.391" height="25.391" fill="url(#c)"
+          style="paint-order:stroke markers fill" />
+        <rect x="102.63" y="90.267" width="25.391" height="25.391" fill="url(#b)"
+          style="paint-order:stroke markers fill" />
+      </g>
+    </svg>
+
+  </body>
+
+</html>
