@@ -159,6 +159,33 @@
         <p>we make brick games</p>
         <a href="https://www.roblox.com/groups/7332330/Tripleselect">GROUP</a>
         <a href="https://discord.gg/MPgSF3y">DISCORD</a>
+        <h1>games</h1>
+        <script>
+          (async () => {
+            /** @type {{data: ({
+              id: number
+              name: string
+              description: string
+              rootPlace: {
+                id: number
+              }
+            })[]}} */
+            const { data: games } = await fetch('https://cors-anywhere.herokuapp.com/https://games.roblox.com/v2/groups/7332330/games?accessFilter=Public&sortOrder=Asc&limit=100').then(res => res.json())
+            document.querySelector('h1').after(...games.map(game => {
+              const article = document.createElement('article')
+              article.style = "text-align: left; background: darkslategray; color: white; padding: 1em; border-radius: 1em;"
+              const title = document.createElement('h1')
+              title.innerText = game.name
+              const desc = document.createElement('p')
+              desc.innerText = game.description
+              const link = document.createElement('a')
+              link.href =  'https://roblox.com/games/' + game.rootPlace.id
+              link.innerText = 'PLAY'
+              article.append(title, desc, link)
+              return article
+            }))
+          })()
+        </script>
       </article>
     </main>
     <a href="https://github.com/tripleselect" class="github-corner" aria-label="GitHub"><svg width="80" height="80"
