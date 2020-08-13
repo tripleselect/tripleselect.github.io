@@ -10,14 +10,12 @@
         "id": {
           "type": "number",
           "title": "Module ID",
-          "description": "The ID of the module. The module will be called like this: require(id)[func](plr.Name)",
-          "required": true
+          "description": "The ID of the module. The module will be called like this: require(id)[func](plr.Name)"
         },
         "func": {
           "type": "string",
           "title": "Function name",
-          "description": "The func in require(id)[func](plr.Name).",
-          "required": false
+          "description": "The func in require(id)[func](plr.Name)."
         }
       }
     }
