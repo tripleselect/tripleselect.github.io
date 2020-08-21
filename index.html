@@ -12,6 +12,9 @@
       html {
         font-family: 'Inter', sans-serif;
         background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       @supports (font-variation-settings: normal) {
@@ -20,24 +23,15 @@
         }
       }
 
-      html,
-      body,
-      main {
+      html {
         text-align: center;
         height: 100%;
         margin: 0;
         color: white;
       }
 
-      main {
-        background: linear-gradient(to left, rgba(0, 0, 0, 0.8), black);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
 
-    
-            a {
+      a {
         border-radius: 0.5em;
         padding: 0.5em;
         display: inline-block;
@@ -123,45 +117,64 @@
           animation: octocat-wave 560ms ease-in-out
         }
       }
+
+      @media(max-width:767px) {
+        article {
+          margin-bottom: 1em
+        }
+      }
+
+      @media(min-width:768px) {
+        section {
+          display: -ms-grid;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          row-gap: .5em;
+          column-gap: .5em
+        }
+
+        article {
+          width: unset;
+          padding: 1em
+        }
+      }
     </style>
   </head>
 
   <body>
-    <main>
-      <article>
-        <img src="./logo.svg" alt="tripleselect" width="200">
-        <p>games by jack</p>
-        <a href="https://discord.gg/MPgSF3y">groomer site</a>
-        <h1>brick games</h1>
-        <a href="https://www.roblox.com/groups/7332330/Tripleselect">group</a>
-        <script>
-          (async () => {
-            /** @type {{data: ({
+    <img src="./logo.svg" alt="tripleselect" width="200">
+    <p>games by jack</p>
+    <a href="https://discord.gg/MPgSF3y">groomer site</a>
+    <h1>brick games</h1>
+    <section id="rblx">
+      <script>
+        (async () => {
+          /** @type {{data: ({
+            id: number
+            name: string
+            description: string
+            rootPlace: {
               id: number
-              name: string
-              description: string
-              rootPlace: {
-                id: number
-              }
-            })[]}} */
-            const { data: games } = await fetch('https://cors-anywhere.herokuapp.com/https://games.roblox.com/v2/groups/7332330/games?accessFilter=Public&sortOrder=Asc&limit=100').then(res => res.json())
-            document.querySelector('h1').after(...games.map(game => {
-              const article = document.createElement('article')
-              article.style = "text-align: left; background: darkslategray; color: white; padding: 1em; border-radius: 1em;"
-              const title = document.createElement('h1')
-              title.innerText = game.name
-              const desc = document.createElement('p')
-              desc.innerText = game.description
-              const link = document.createElement('a')
-              link.href =  'https://roblox.com/games/' + game.rootPlace.id
-              link.innerText = 'PLAY'
-              article.append(title, desc, link)
-              return article
-            }))
-          })()
-        </script>
-      </article>
-    </main>
+            }
+          })[]}} */
+          const { data: games } = await fetch('https://cors-anywhere.herokuapp.com/https://games.roblox.com/v2/groups/7332330/games?accessFilter=Public&sortOrder=Asc&limit=100').then(res => res.json())
+          document.querySelector('#rblx').append(...games.map(game => {
+            const article = document.createElement('article')
+            article.style = "text-align: left; background: darkslategray; color: white; padding: 1em; border-radius: 1em;"
+            const title = document.createElement('h1')
+            title.innerText = game.name
+            const desc = document.createElement('p')
+            desc.innerText = game.description
+            const link = document.createElement('a')
+            link.href = 'https://roblox.com/games/' + game.rootPlace.id
+            link.innerText = 'PLAY'
+            article.append(title, desc, link)
+            return article
+          }))
+        })()
+      </script>
+    </section><br>
+    <a href="https://www.roblox.com/groups/7332330/Tripleselect">group</a>
     <a href="https://github.com/tripleselect" class="github-corner" aria-label="GitHub"><svg width="80" height="80"
         viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
